@@ -10,10 +10,3 @@
     height: 100vh;
     gap: 50px;
 }
-.hidden_word {
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-    font-size: 2em;
-    font-weight: bold;
-}
