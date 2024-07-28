@@ -1,8 +1,8 @@
 import './App.css'
 import {useState} from "react";
 import words from './wordList.json'
-import {keyboard} from './keyboard.js';
 import HangMan from "./hangman/HangMan.tsx";
+import Keyboard from "./keyboard/Keyboard.tsx";
 
 function App() {
 
@@ -30,15 +30,7 @@ function App() {
                 )
             })}
         </div>
-        <div className="keyboard">
-            {keyboard.map((letter, index) => {
-                return (
-                    <button key={index}>
-                        {letter}
-                    </button>
-                )
-            })}
-        </div>
+        <Keyboard />
     </div>
     )
     }
