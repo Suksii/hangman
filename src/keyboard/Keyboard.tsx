@@ -1,28 +1,34 @@
 import { keyboard } from "../keyboard.ts";
 import "./Keyboard.css"
-import {useState} from "react";
 
-const Keyboard = () => {
+type KeyboardProps = {
+    activeLetters: string[]
+    inactiveLetters: string[]
+    addGuessedLetter: (letter: string) => void
 
-    const [guessedLetter, setGuessedLetter] = useState('')
-    const [isGuessed, setIsGuessed] = useState(false)
+}
 
-    console.log(guessedLetter)
+const Keyboard = ({activeLetters, inactiveLetters, addGuessedLetter}:KeyboardProps) => {
+
+
 
     return (
         <div className="keyboard">
             {keyboard.map((row, rowIndex) => (
                 <div key={rowIndex} className="keyboard_row">
-                    {row.map((letter, letterIndex) => (
+                    {row.map((letter, letterIndex) => {
+                        const isActive = activeLetters.includes(letter)
+                        const isInactive = inactiveLetters.includes(letter)
+                        return (
                         <button
-                            disabled={isGuessed}
+                            disabled={isActive || isInactive}
                             key={letterIndex}
                             className="keyboard_letter"
-                            onClick={() => setGuessedLetter(letter)}
+                            onClick={() => addGuessedLetter(letter)}
                         >
                             {letter}
                         </button>
-                    ))}
+                        )})}
                 </div>
             ))}
         </div>
