@@ -1,14 +1,40 @@
 import './HangMan.css';
 
-const HangMan = () => {
+type HangManProps = {
+    numberOfWrongGuesses: number
+}
+
+const HangMan = ({numberOfWrongGuesses}: HangManProps) => {
+
+
+    const head = (
+        <div className="head"/>
+    )
+    const body = (
+        <div className="body"/>
+    )
+    const rightArm = (
+        <div className="right_arm"/>
+    )
+    const leftArm = (
+        <div className="left_arm"/>
+    )
+    const rightLeg = (
+        <div className="right_leg"/>
+    )
+    const leftLeg = (
+        <div className="left_leg"/>
+    )
+
+    const hangManParts = [head, body, rightArm, leftArm, rightLeg, leftLeg]
+
     return (
         <div className="hang_container">
-            <div className="head"/>
-            <div className="body"/>
-            <div className="right_arm"/>
-            <div className="left_arm"/>
-            <div className="right_leg"/>
-            <div className="left_leg"/>
+            {hangManParts.slice(0, numberOfWrongGuesses).map((part, index) => (
+                <div key={index}>
+                    {part}
+                </div>
+            ))}
             <div className="hanger"/>
             <div className="ceiling"/>
             <div className="rod"/>

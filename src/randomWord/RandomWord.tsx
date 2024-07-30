@@ -1,14 +1,11 @@
 import "./RandomWord.css"
-import words from "../wordList.json";
-import {useState} from "react";
 
-const RandomWord = () => {
+type RandomWordProps = {
+    guessedLetters: string[]
+    word: string
+}
 
-    const randomWord = words[Math.floor(Math.random() * words.length)];
-
-    const guessedLetters = ['d', 'm'];
-
-    const [word, setWord] = useState(randomWord)
+const RandomWord = ({guessedLetters, word}:RandomWordProps) => {
 
     return (
         <div className="hidden_word">
