@@ -5,10 +5,15 @@ type KeyboardProps = {
     activeLetters: string[]
     inactiveLetters: string[]
     addGuessedLetter: (letter: string) => void
+    disabled?: boolean
 
 }
 
-const Keyboard = ({activeLetters, inactiveLetters, addGuessedLetter}:KeyboardProps) => {
+const Keyboard = ({activeLetters,
+                      inactiveLetters,
+                      addGuessedLetter,
+                      disabled = false
+                    }:KeyboardProps) => {
 
 
 
@@ -21,7 +26,7 @@ const Keyboard = ({activeLetters, inactiveLetters, addGuessedLetter}:KeyboardPro
                         const isInactive = inactiveLetters.includes(letter)
                         return (
                         <button
-                            disabled={isActive || isInactive}
+                            disabled={isActive || isInactive || disabled}
                             key={letterIndex}
                             className="keyboard_letter"
                             onClick={() => addGuessedLetter(letter)}

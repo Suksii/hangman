@@ -3,9 +3,11 @@ import "./RandomWord.css"
 type RandomWordProps = {
     guessedLetters: string[]
     word: string
+    revealWord?: boolean
+
 }
 
-const RandomWord = ({guessedLetters, word}:RandomWordProps) => {
+const RandomWord = ({guessedLetters, word, revealWord = false}:RandomWordProps) => {
 
     return (
         <div className="hidden_word">
@@ -13,9 +15,10 @@ const RandomWord = ({guessedLetters, word}:RandomWordProps) => {
                 <span key={index}
                       className="letter">
                     <span style={{
-                        visibility: guessedLetters.includes(letter)
+                        visibility: guessedLetters.includes(letter) || revealWord
                             ? "visible"
-                            : "hidden"
+                            : "hidden",
+                        color: !guessedLetters.includes(letter) && revealWord ? "red" : "black"
                     }}>
                         {letter}
                     </span>
