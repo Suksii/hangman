@@ -1,30 +1,19 @@
-# React + TypeScript + Vite
+# Hangman Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Hangman game is a web project developed in React. This is my first project using Typescript.
 
-Currently, two official plugins are available:
+## About
+This is an implementation of the classic "Hangman" game using React and TypeScript. The game features a gallows, a keyboard, and a randomly chosen word with its letters displayed as '_'. By clicking on a button on the keyboard, or clicking letter on the screen, the corresponding letter is revealed in the word if it exists, or a part of the body appears on the gallows if it doesn't. The game ends when the player makes 6 mistakes.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Technical Details
+**Technologies Used:** React, Typescript, CSS.<br/>
+**React Hooks Used:** useState, useEffect, useCallback
+**JS Technologies Used:** includes,  window (addEvetListener, removeEventListener, location.reload), filter, map, slice
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json', './tsconfig.app.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Installation
+1. Create a folder on the desktop: `mkdir MyProject` 
+2. Navigate to the desktop folder: `cd %USERPROFILE%/Desktop/MyProject`
+3. Clone the repository: `git clone "https://github.com/Suksii/hangman.git"`
+4. Navigate to the cloned project folder: `cd hangman`
+5. Install dependencies: `npm install`
+6. Run the application: `npm run dev`
