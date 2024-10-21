@@ -7,7 +7,7 @@ This is an implementation of the classic "Hangman" game using React and TypeScri
 
 ## Technical Details
 **Technologies Used:** React, Typescript, CSS.<br/>
-**React Hooks Used:** useState, useEffect, useCallback
+**React Hooks Used:** useState, useEffect, useCallback<br/>
 **JS Technologies Used:** includes,  window (addEvetListener, removeEventListener, location.reload), filter, map, slice
 
 ## Installation
